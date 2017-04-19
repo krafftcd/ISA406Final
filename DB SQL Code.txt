@@ -1,0 +1,30 @@
+Drop Table NFCComputers; 
+Drop Table NFCRentedLog; 
+Drop Table NFCComputerLog; 
+Drop Sequence id_count; 
+
+Create Table NFCComputers( 
+NFCID VarChar(50) NOT NULL, 
+ComputerSerialNum VarChar(50) NOT NULL, 
+PRIMARY KEY (NFCID) 
+); 
+
+Create Table NFCRentedLog( 
+CountID int NOT NULL, 
+NFCID VarChar(50) NOT NULL, 
+StudentID VarChar(50) NOT NULL, 
+ReturnedTime VarChar(50) NOT NULL, 
+PRIMARY KEY (CountID) 
+); 
+
+Create Table NFCComputerLog( 
+NFCID VarChar(50) NOT NULL, 
+StudentID VarChar(50), 
+RentedOut VarChar(50), 
+PRIMARY KEY (NFCID) 
+); 
+
+CREATE SEQUENCE id_Count 
+MINVALUE 1 
+START WITH 1 
+INCREMENT BY 1; 
